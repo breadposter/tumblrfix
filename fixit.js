@@ -17,5 +17,13 @@ var observer = new MutationObserver(function (mutations) {
 });
 observer.observe(document, { attributes: true, childList: true, subtree: true });
 
+// Hide filtered tags on initial load (not part of mutations in initial page of
+// dashboard elements).
+document.querySelectorAll('a[href="/settings/account#tagfiltering"]').forEach(function(elem) {
+  var filtered = elem.parentElement.parentElement.parentElement.parentElement.parentElement;
+  filtered.style.border = "10px solid red";
+  filtered.style.display = "none";
+});
+
 console.log("Loaded TumblrFix.");
 // document.body.style.border = "5px solid yellow";
