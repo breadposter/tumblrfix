@@ -1,7 +1,7 @@
 {
 
   "manifest_version": 2,
-  "name": "TumblrFix",
+  "name": "tumblrfix",
   "version": "1.0",
 
   "description": "Fix Tumblr issues that annoy me and I can't find an easy way around with pre-existing extensions.",
@@ -20,7 +20,7 @@
 
   "developer": {
     "name": "Uzume Sakura",
-    "url": "https://github.com/breadposter/TumblrFix"
+    "url": "https://github.com/breadposter/tumblrfix"
   }
 
 }
