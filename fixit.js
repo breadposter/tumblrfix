@@ -7,7 +7,8 @@ var observer = new MutationObserver(function (mutations) {
 
     // Check if mutation is an item on dashboard with a filtered tag inside it.
     // If so, hide it entirely.
-    var is_filtered = mutation.target.querySelector(':scope > div > div > article > div > a[href="/settings/account#tagfiltering"]');
+    var is_filtered = mutation.target.querySelector(':scope > div > div > article > div > a[href="/settings/account#tagfiltering"]'
+      + ', :scope > div > div > article > div > a[href="/settings/account#contentfiltering"]');
     if (is_filtered !== null) {
         mutation.target.style.border = "10px solid red";
         mutation.target.style.display = "none";
@@ -19,7 +20,7 @@ observer.observe(document, { attributes: true, childList: true, subtree: true })
 
 // Hide filtered tags on initial load (not part of mutations in initial page of
 // dashboard elements).
-document.querySelectorAll('a[href="/settings/account#tagfiltering"]').forEach(function(elem) {
+document.querySelectorAll('a[href="/settings/account#tagfiltering"], a[href="/settings/account#contentfiltering"]').forEach(function(elem) {
   var filtered = elem.parentElement.parentElement.parentElement.parentElement.parentElement;
   filtered.style.border = "10px solid red";
   filtered.style.display = "none";
